@@ -9,17 +9,22 @@
 </head>
 <body>
     <script>
+        var league = getURLParameter('league');
+        var home_team = getURLParameter('home_team');
+        var away_team = getURLParameter('away_team');
+        var game_date = getURLParameter('game_date');
+        
         window.location = 
         "http://www.tiqiq.com/" + 
-        getURLParameter('league') + 
+        league + 
         "/" + 
-        getURLParameter('home_team') + 
+        home_team + 
         "-tickets/" + 
-        getURLParameter('home_team') + 
+        home_team + 
         "-vs-=" + 
-        getURLParameter('away_team') +
-        "--"
-        + getURLParameter('game_date') + 
+        away_team +
+        "--" +
+        game_date + 
         "/?publisherid=1586728&utm_campaign=clutchpoints";
         
         function getURLParameter(name) {
