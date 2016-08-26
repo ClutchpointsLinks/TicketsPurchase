@@ -10,11 +10,17 @@
 <body>
     <script>
         window.location = 
-        "http://www.tiqiq.com/" + getURLParameter('league') + 
-        "/" + getURLParameter('home_team') + 
-        "-tickets/" + getURLParameter('home_team') + 
-        "-vs-=" + getURLParameter('away_team') +
-        "--"+ getURLParameter('game_date') + "/?publisherid=1586728&utm_campaign=clutchpoints";
+        "http://www.tiqiq.com/" + 
+        getURLParameter('league') + 
+        "/" + 
+        getURLParameter('home_team') + 
+        "-tickets/" + 
+        getURLParameter('home_team') + 
+        "-vs-=" + 
+        getURLParameter('away_team') +
+        "--"
+        + getURLParameter('game_date') + 
+        "/?publisherid=1586728&utm_campaign=clutchpoints";
         
         function getURLParameter(name) {
           return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
