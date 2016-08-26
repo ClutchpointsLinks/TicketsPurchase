@@ -14,18 +14,29 @@
         var away_team = getURLParameter('away_team');
         var game_date = getURLParameter('game_date');
         
-        window.location = 
-        "http://www.tiqiq.com/" + 
-        league + 
-        "/" + 
-        home_team + 
-        "-tickets/" + 
-        home_team + 
-        "-vs-" + 
-        away_team +
-        "--" +
-        game_date + 
-        "/?publisherid=1586728&utm_campaign=clutchpoints";
+        if(home_team.toLowerCase().indexOf("all-stars") != -1 || away_team.toLowerCase().indexOf("all-stars") !== -1 ) {
+          window.location = 
+          "http://www.tiqiq.com/" + 
+          league + 
+          "/" + 
+          league + 
+          "-all-star-game-tickets/" + 
+          "/?publisherid=1586728&utm_campaign=clutchpoints";
+        }
+        else {
+          window.location = 
+          "http://www.tiqiq.com/" + 
+          league + 
+          "/" + 
+          home_team + 
+          "-tickets/" + 
+          home_team + 
+          "-vs-" + 
+          away_team +
+          "--" +
+          game_date + 
+          "/?publisherid=1586728&utm_campaign=clutchpoints";
+        }
         
         function getURLParameter(name) {
           return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
